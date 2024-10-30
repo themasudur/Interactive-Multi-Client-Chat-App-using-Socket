@@ -1,4 +1,4 @@
-# Interactive Multi-client Chat System using Socket in Python
+## Interactive Multi-client Chat System using Socket in Python
 
 In this application, we built an online chat system. 
 
