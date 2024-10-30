@@ -1,6 +1,137 @@
 ## Interactive Multi-client Chat System using Socket in Python
 
-In this application, we built an online chat system. 
+# csce513fall24Msg
+
+`csce513fall24Msg` is a Python-based GUI online chat application designed for students and instructors to communicate in a class setting. This application facilitates real-time, secure, and organized discussions, supporting private and group messages, file transfers, offline messaging, and encrypted communication.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Architecture](#architecture)
+- [Detailed Explanation of Each Component](#detailed-explanation-of-each-component)
+- [Bonus Features](#bonus-features)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- **Private Messaging**: Direct messaging for one-on-one communication.
+- **Group Chat**: Group discussions, with real-time visibility for all members.
+- **File Transfer**: Easy file sharing between clients.
+- **Offline Messaging**: Stores messages for offline users and delivers them upon reconnection.
+- **Secure Communication**: RSA-encrypted message exchange for secure communication.
+
+## Technologies Used
+
+- **Python**: Core programming language.
+- **Tkinter**: GUI library for creating cross-platform user interfaces.
+- **Socket Programming**: Enables TCP/IP communication for real-time messaging.
+- **Multithreading**: Supports multiple concurrent users.
+- **Encryption**: Implements RSA for secure message exchanges.
+
+## Setup
+
+### Prerequisites
+
+- Python 3.x
+- Basic familiarity with running Python scripts
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/csce513fall24Msg.git
+   cd csce513fall24Msg
+
+
+## Usage
+
+### Client GUI Overview
+
+The client GUI, built with Tkinter, includes the following sections:
+
+- **Login Section**: Allows users to enter their username and connect to the server.
+- **Chat Display**: Shows ongoing chat messages and notifications.
+- **Message Input**: Users can type messages here. Supports various commands:
+  - `@username message`: Direct message to a specific user.
+  - `/group group_name message`: Sends message to a specified group.
+  - `/file recipient_username path_to_file`: Sends a file to another user.
+- **File Transfer**: Supports selecting and sending files.
+- **Encryption**: Automatically manages secure communications.
+
+### Example Sessions
+
+- **Starting a Private Chat**:
+  - Enter `@username message` in the message input box to chat directly with a user.
+
+- **Group Chat**:
+  - Enter `/group group_name message` to send a message to everyone in the specified group.
+
+- **File Transfer**:
+  - Use the GUI’s file selection button or input `/file recipient_username path_to_file` to send a file to another client.
+
+## Architecture
+
+The `csce513fall24Msg` system operates on a client-server architecture, where all client communications are routed through the server. The application supports concurrent users, ensuring efficient message handling and enhanced user experience.
+
+- **Server**: Handles all incoming connections, message routing, and user management. Uses multi-threading to support multiple users.
+- **Client**: Each client connects to the server and enables real-time chat in a graphical environment. Advanced functionalities like encryption, group chats, and file transfers are seamlessly integrated.
+- **Encryption**: RSA-based secure message exchange ensures confidentiality and security.
+
+## Detailed Explanation of Each Component
+
+1. **Server (server.py)**
+   - **Socket Initialization**: Creates a TCP/IP socket bound to a specified IP and port.
+   - **Connection Management**: Manages client connections and directs messages based on the recipient.
+   - **Multi-Threading**: Each client connection is handled by a dedicated thread.
+   - **Message Handling**: Routes messages to the intended recipients, supports file transfers, and manages offline message delivery.
+   - **Error Handling**: Manages exceptions, such as unexpected client disconnections.
+
+2. **Client (client.py)**
+   - **Socket Connection**: Connects to the server using a specific IP and port.
+   - **GUI with Tkinter**: The graphical interface includes login, chat display, message input, and file transfer sections.
+   - **Commands and Parsing**: Supports commands for direct messaging, group chats, and file transfers.
+   - **I/O Multiplexing**: Uses `select` for efficient message sending and receiving without blocking.
+   - **Encryption**: Encrypts messages before sending and decrypts upon receipt.
+
+## Bonus Features
+
+### Group Chat
+
+The group chat feature allows multiple users to communicate within a dedicated chat room. Users can join or create a group using `/group group_name`.
+
+### File Transfer
+
+File transfer is initiated through the GUI or by entering `/file recipient_username path_to_file`. Files are sent through the server, ensuring smooth delivery.
+
+### Offline Messaging
+
+If a client is offline, messages sent to them are stored on the server and delivered once they reconnect.
+
+### Secure Communication
+
+RSA encryption is implemented to secure private messages. Each message is encrypted using the recipient's public key and decrypted upon receipt using the recipient's private key.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+
+
+This In this application, we built an online chat system. 
 
 # Problem Statement:
 
