@@ -24,20 +24,27 @@
 - **Offline Messaging**: Stores messages for offline users and delivers them upon reconnection.
 - **Secure Communication**: RSA-encrypted message exchange for secure communication.
 
+## Architecture
+
+The `csce513fall24Msg` system operates on a client-server architecture, where all client communications are routed through the server. The application supports concurrent users, ensuring efficient message handling and enhanced user experience.
+
+- **Server**: Handles all incoming connections, message routing, and user management. Uses multi-threading to support multiple users.
+- **Client**: Each client connects to the server and enables real-time chat in a graphical environment. Advanced functionalities like encryption, group chats, and file transfers are seamlessly integrated.
+- **Encryption**: RSA-based secure message exchange ensures confidentiality and security.
+
 ## Technologies Used
 
-- **Python**: Core programming language.
-- **Tkinter**: GUI library for creating cross-platform user interfaces.
-- **Socket Programming**: Enables TCP/IP communication for real-time messaging.
-- **Multithreading**: Supports multiple concurrent users.
+- **Socket Programming**: Enables TCP-based communication for real-time messaging.
+- **Threading**: Each client connection runs in its own thread for concurrent handling. multiple concurrent users
 - **Encryption**: Implements RSA for secure message exchanges.
+- **GUI (PyQt5)**: Displays client lists, group memberships, and chat messages.
 
-## Setup
+## Installation and Setup
 
-### Prerequisites
+### Requirements
 
-- Python 3.x
-- Basic familiarity with running Python scripts
+- Python 3.6+
+- PyQt5 library (install with `pip install PyQt5`)
 
 ### Installation
 
@@ -46,21 +53,49 @@
    git clone https://github.com/yourusername/csce513fall24Msg.git
    cd csce513fall24Msg
 
+### Run
 
-## Usage
+2. Run the server:
+   ```bash
+   python Server.py
+The server will start listening on the specified HOST and PORT.
 
-### Client GUI Overview
+3. Run the Client.py
+   ```bash
+   python Server.py
+Clients should connect to the server using a compatible client script that sends and receives messages over the specified port.
 
-The client GUI, built with Tkinter, includes the following sections:
+## Functionality and Usage
 
-- **Login Section**: Allows users to enter their username and connect to the server.
+### Starting the Server
+The server binds to the local IP address (127.0.0.1) and port (54321) and listens for incoming client connections.
 - **Chat Display**: Shows ongoing chat messages and notifications.
+
+### Client Connection
+Clients connect by providing a unique name.
+Upon connection, any stored messages for the client are automatically sent.
+Login Section: Allows users to enter their username and connect to the server.
+- **Chat Display**: Shows ongoing chat messages and notifications.
+
+### Messaging
 - **Message Input**: Users can type messages here. Supports various commands:
   - `@username message`: Direct message to a specific user.
   - `/group group_name message`: Sends message to a specified group.
   - `/file recipient_username path_to_file`: Sends a file to another user.
 - **File Transfer**: Supports selecting and sending files.
 - **Encryption**: Automatically manages secure communications.
+
+Broadcasting: Messages without commands are broadcasted to all connected clients.
+Private Messaging: Send direct messages by prefixing with @username.
+Group Messages: Send messages to a specific group by using /group_msg.
+
+### Commands
+/create_group <group_name>: Creates a new group.
+/join_group <group_name>: Joins an existing group.
+/group_msg <group_name> <message>: Sends a message to all group members.
+@<username> <message>: Sends a private message to a specific user.
+
+
 
 ### Example Sessions
 
@@ -73,13 +108,6 @@ The client GUI, built with Tkinter, includes the following sections:
 - **File Transfer**:
   - Use the GUI’s file selection button or input `/file recipient_username path_to_file` to send a file to another client.
 
-## Architecture
-
-The `csce513fall24Msg` system operates on a client-server architecture, where all client communications are routed through the server. The application supports concurrent users, ensuring efficient message handling and enhanced user experience.
-
-- **Server**: Handles all incoming connections, message routing, and user management. Uses multi-threading to support multiple users.
-- **Client**: Each client connects to the server and enables real-time chat in a graphical environment. Advanced functionalities like encryption, group chats, and file transfers are seamlessly integrated.
-- **Encryption**: RSA-based secure message exchange ensures confidentiality and security.
 
 ## Detailed Explanation of Each Component
 
