@@ -2,7 +2,7 @@
 
 ## Problem Statement:
 
-Design and develop an online chat system, named csce513fall24Msg, for communications and discussions among students in a class. The csce513fall24Msg is expected to enable the students to chat with the instructor and their classmates for any necessary discussion, e.g., homework problem. Below are the general guideline for the system design.
+Design and develop an online chat system, named csce513fall24Msg, for communications and discussions among students in a class. The csce513fall24Msg is expected to enable the students to chat with the instructor and their classmates for any necessary discussion, e.g., homework problem.
 
 ## csce513fall24Msg
 
@@ -57,5 +57,5 @@ The `csce513fall24Msg` system operates on a client-server architecture, where al
    python csce513fall24Msg_Client.py```
 A prompt will ask for `username` when user wants to join the chatroom and accepts the connection only if the username is unique.
 
-# About 
+## About 
 This is designed and written by `Masud.`
