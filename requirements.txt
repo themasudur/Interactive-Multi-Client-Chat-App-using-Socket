@@ -1,3 +1,2 @@
-# Socket Programing
-# Threading
-# Locking
+$python csce513fall24Msg_Server.py
+$python csce513fall24Msg_Client.py
