@@ -1,24 +1,19 @@
 ## Interactive Multi-client Chat System using Socket in Python
 
-# Problem Statement:
+## Problem Statement:
 
 Design and develop an online chat system, named csce513fall24Msg, for communications and discussions among students in a class. The csce513fall24Msg is expected to enable the students to chat with the instructor and their classmates for any necessary discussion, e.g., homework problem. Below are the general guideline for the system design.
 
-# csce513fall24Msg
+## csce513fall24Msg
 
 `csce513fall24Msg` is a online chat application designed for students to communicate and discuss with the instructor and their classmates for any necessary discussion, e.g., homework problem.
 
 ## Table of Contents
 
 - [Features](#features)
-- [Run](#run)
 - [Functionality](#functionality)
 - [Technologies](#technologies)
-- [Architecture](#architecture)
-- [Detailed Explanation of Each Component](#detailed-explanation-of-each-component)
-- [Bonus Features](#bonus-features)
-- [Contributing](#contributing)
-- [License](#license)
+- [Run](#run)
 
 ## Features
 
@@ -59,65 +54,8 @@ The `csce513fall24Msg` system operates on a client-server architecture, where al
    
 3. **Run the Client**
    ```bash
-   python csce513fall24Msg_Client.py
+   python csce513fall24Msg_Client.py```
+A prompt will ask for `username` when user wants to join the chatroom and accepts the connection only if the username is unique.
 
-
-
-> $ git clone https://github.com/Rishija/python_chatServer.git
-
-## About 
-This is a simple multi-client chat server using `sockets` written in `python`. 
-
-The server asks for username when user wants to join the chatroom and accepts the connection only if the username is unique. It then broadcasts the message from one client to all other clients connected. Also informs about the entry/exit of any client.
-
-## Download
-Run the following command in your terminal to save the repository in your system
-> $ git clone https://github.com/Rishija/python_chatServer.git
-
-## Run
-Once you are in the directory where `server.py` or `client.py` file exists, run by typing the following commands in your terminal.
-
-### Server
-> $ python server.py
-
-### Client
-> $ python client.py hostname
-
-#### Example
-For server and client running on the same system
-
-**Server**
-> $ python server.py
-<pre>
-				SERVER WORKING 
-Client (127.0.0.1, 51638) connected  [ tesla ]
-Client (127.0.0.1, 51641) connected  [ albert ]
-Client (127.0.0.1, 51641) is offline  [ albert ]
-</pre>
-
-
-
-**Client 1**
-> $ python client.py localhost
-
-<pre>
-CREATING NEW ID:
-Enter username: tesla
-Welcome to chat room. Enter 'tata' anytime to exit
-You: Hello
-albert joined the conversation 
-albert: world
-albert left the conversation
-You:
-</pre>
-
-**Client 2**
-> $ python client.py localhost
-<pre>
-CREATING NEW ID:
-Enter username: albert
-Welcome to chat room. Enter 'tata' anytime to exit
-You: World
-You: tata
-DISCONNECTED!!
-</pre>
+# About 
+This is designed and written by `Masud.`
